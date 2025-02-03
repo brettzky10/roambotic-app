@@ -2,11 +2,19 @@ import Link from 'next/link'
 import MaxWidthWrapper from './max-width-wrapper'
 import { buttonVariants } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
-import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
+import createSupabaseServerClient from '@/lib/supabase/server'
+//import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
 
 const Navbar = async () => {
-  const { getUser } = getKindeServerSession()
-  const user = await getUser()
+  //const { getUser } = getKindeServerSession()
+  //const user = await getUser()
+
+  const supabase = await createSupabaseServerClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
 
   const isAdmin = user?.email === process.env.ADMIN_EMAIL
 
@@ -45,7 +53,7 @@ const Navbar = async () => {
                     size: 'sm',
                     className: 'hidden sm:flex items-center gap-1',
                   })}>
-                  Create Robot
+                  Buy
                   <ArrowRight className='ml-1.5 h-5 w-5' />
                 </Link>
               </>

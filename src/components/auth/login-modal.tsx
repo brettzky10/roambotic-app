@@ -1,4 +1,4 @@
-import type { Dispatch, SetStateAction } from 'react'
+/* import type { Dispatch, SetStateAction } from 'react'
 import {
   Dialog,
   DialogContent,
@@ -7,7 +7,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import Image from 'next/image'
-import { LoginLink, RegisterLink } from '@kinde-oss/kinde-auth-nextjs'
+//import { LoginLink, RegisterLink } from '@kinde-oss/kinde-auth-nextjs'
 import { buttonVariants } from '@/components/ui/button'
 
 const LoginModal = ({
@@ -53,4 +53,4 @@ const LoginModal = ({
   )
 }
 
-export default LoginModal
+export default LoginModal */
